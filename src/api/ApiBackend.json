@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "a76aa4a2-4a1f-47d0-b8c8-b1df308f981c",
+		"name": "Api Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{apiback}}app/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{tokenloc}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama\":\"kripik\",\r\n\t\"harga\":\"100000\",\r\n\t\"satuan\":\"10000\",\r\n\t\"qty\":2,\r\n\t\"minbeli\":2,\r\n\t\"maxbeli\":2,\r\n\t\"stok\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{apiback}}produk/create"
+			},
+			"response": []
+		},
+		{
+			"name": "Produc By ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{tokenloc}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{apiback}}produk/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Product Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{tokenloc}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n\t\"nama\":\"Satu aya\",\r\n\t\"harga\":\"100000\",\r\n\t\"satuan\":\"10000\",\r\n\t\"qty\":\"2\",\r\n\t\"minbeli\":100,\r\n\t\"maxbeli\":100,\r\n\t\"stok\":100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{apiback}}produk/update/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{tokenloc}}"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "{{apiback}}produk/2"
+			},
+			"response": []
+		},
+		{
+			"name": "All Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{tokenloc}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{apiback}}produk?page=1&size=10&nama=tuna",
+					"host": [
+						"{{apiback}}produk"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						},
+						{
+							"key": "nama",
+							"value": "tuna"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{tokenloc}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{apiback}}app/profil"
+			},
+			"response": []
+		},
+		{
+			"name": "User By ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{tokenloc}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{apiback}}app/byid/12"
+			},
+			"response": []
+		},
+		{
+			"name": "all user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{tokenloc}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{apiback}}app/user"
+			},
+			"response": []
+		}
+	]
+}
